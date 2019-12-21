@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.viseo.companyapp.model.Company
-import kotlinx.android.synthetic.main.copany_item.view.*
+import kotlinx.android.synthetic.main.company_item.view.*
 
 /**
  * RecyclerView Adapter for Company List

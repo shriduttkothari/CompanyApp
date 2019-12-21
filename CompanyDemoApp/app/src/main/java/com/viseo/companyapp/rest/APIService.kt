@@ -1,6 +1,6 @@
 package com.viseo.companyapp.rest
 
-import com.viseo.companyapp.model.CompanyList
+import com.viseo.companyapp.model.Company
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -12,5 +12,5 @@ import retrofit2.http.GET
 interface APIService {
 
     @GET("/api/json/get/Vk-LhK44U")
-    fun fetchCompanyList(): Call<CompanyList>
+    fun fetchCompanyList(): Call<List<Company>>
 }
