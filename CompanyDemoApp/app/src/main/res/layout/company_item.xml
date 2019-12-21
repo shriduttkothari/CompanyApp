@@ -1,20 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!-- A CardView that contains a TextView -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    card_view:cardCornerRadius="4dp"
+    android:padding="@dimen/padding_cardview"
+    android:layout_marginBottom="@dimen/margin_small">
 
-    <TextView
-        android:id="@+id/companyName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold" />
-    <View
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/line_height"
-        android:layout_marginBottom="@dimen/margin_small"
-        android:layout_marginTop="@dimen/margin_small"
-        android:background="@android:color/darker_gray" />
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/companyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+

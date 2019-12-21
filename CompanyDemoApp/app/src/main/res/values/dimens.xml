@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="padding_default">16dp</dimen>
+    <dimen name="padding_cardview">26dp</dimen>
+    <dimen name="text_size">20sp</dimen>
     <dimen name="line_height">0.5dp</dimen>
     <dimen name="margin_small">5dp</dimen>
 </resources>
