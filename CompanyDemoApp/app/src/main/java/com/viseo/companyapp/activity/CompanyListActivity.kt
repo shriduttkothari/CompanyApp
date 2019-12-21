@@ -8,12 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Filter
 import android.widget.Filterable
-import androidx.appcompat.widget.SearchView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.view.menu.MenuAdapter
-import androidx.appcompat.widget.DialogTitle
-import androidx.core.view.MenuItemCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.viseo.companyapp.R
@@ -44,7 +39,6 @@ class CompanyListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_company_list)
 
         mApiService = RestClient.client.create(APIService::class.java)
-
         companyRecyclerView!!.layoutManager = LinearLayoutManager(this)
 
         mAdapter = CompanyListAdapter(this, mCompanies, R.layout.company_item)
@@ -59,7 +53,7 @@ class CompanyListActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<List<Company>>, response: Response<List<Company>>) {
 
-                Log.d(TAG, "Total Companies: " + response.body()!!.size)
+                Log.d(TAG, "Total Companies found: " + response.body()!!.size)
                 val companyList = response.body()
                 if (companyList != null) {
                     mCompanies.addAll(companyList)
@@ -70,7 +64,6 @@ class CompanyListActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<Company>>, t: Throwable) {
                 Log.e(TAG, "Got error : " + t.localizedMessage)
-                Toast.makeText(applicationContext, "Got error : " + t.localizedMessage, Toast.LENGTH_LONG).show()
             }
         })
     }
@@ -103,11 +96,9 @@ class CompanyListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_search -> {
-                Toast.makeText(applicationContext, "click on search", Toast.LENGTH_LONG).show()
                 true
             }
             R.id.action_sort -> {
-                Toast.makeText(applicationContext, "click on sort", Toast.LENGTH_LONG).show()
                 showSortDiaog()
                 true
             }
@@ -116,7 +107,7 @@ class CompanyListActivity : AppCompatActivity() {
     }
 
     private fun showSortDiaog() {
-        val options: Array<String> = arrayOf(getString(R.string.ascending), getString(R.string.descending));
+        val options: Array<String> = arrayOf(getString(R.string.ascending) + getString(R.string.name), getString(R.string.descending) + getString(R.string.name));
         val alertDialogBuilder: AlertDialog.Builder = AlertDialog.Builder(this , R.style.MyDialogTheme)
         alertDialogBuilder.setTitle(R.string.sort_by)
         alertDialogBuilder.setItems(options, object : DialogInterface.OnClickListener {

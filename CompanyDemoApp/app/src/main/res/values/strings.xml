@@ -4,5 +4,7 @@
     <string name="sort">Sort</string>
     <string name="ascending">Ascending</string>
     <string name="descending">Descending</string>
+    <string name="name">&#160;(Name)</string>
+    <string name="age">&#160;(Age)</string>
     <string name="sort_by">Sort By</string>
 </resources>

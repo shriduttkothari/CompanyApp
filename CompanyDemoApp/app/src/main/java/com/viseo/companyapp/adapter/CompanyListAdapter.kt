@@ -1,12 +1,15 @@
 package com.viseo.companyapp.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.viseo.companyapp.activity.MemberListActivity
 import com.viseo.companyapp.filter.CompanyFilter
 import com.viseo.companyapp.model.Company
 import kotlinx.android.synthetic.main.company_item.view.*
@@ -44,7 +47,9 @@ class CompanyListAdapter : RecyclerView.Adapter<CompanyListAdapter.CompanyViewHo
         holder.companyName?.text =  mCompanyList[position].companyName;
         holder.containerView.setOnClickListener {
             var members = mCompanyList[position].members
-            //TODO: To Launch MemberListActivity with members data
+            val intent: Intent = Intent(context, MemberListActivity::class.java)
+            intent.putParcelableArrayListExtra(MemberListActivity.MEMBER_LIST, members as java.util.ArrayList<out Parcelable>)
+            context.startActivity(intent);
         }
     }
 

@@ -1,6 +1,8 @@
 package com.viseo.companyapp.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 /**
  *
@@ -10,7 +12,7 @@ class Company {
 
     @SerializedName("company")
     val companyName: String? = null
-    val members: List<Member>? = null
+    val members: ArrayList<Member>? = null
 
     companion object {
         var BY_COMPANY_NAME_ASCENDING = object: Comparator<Company> {
