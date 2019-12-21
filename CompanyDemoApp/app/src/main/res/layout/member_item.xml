@@ -7,13 +7,14 @@
     android:layout_gravity="center"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardCornerRadius="4dp"
+    card_view:cardCornerRadius="@dimen/card_corner_radius"
     android:padding="@dimen/padding_cardview"
     android:layout_marginBottom="@dimen/margin_small">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/cardview_child_layout_margin">
 
         <TextView
             android:id="@+id/memberName"

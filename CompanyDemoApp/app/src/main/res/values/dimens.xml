@@ -5,4 +5,7 @@
     <dimen name="text_size">20sp</dimen>
     <dimen name="line_height">0.5dp</dimen>
     <dimen name="margin_small">5dp</dimen>
+    <dimen name="cardview_child_layout_margin">10dp</dimen>
+    <dimen name="card_corner_radius">3dp</dimen>
+
 </resources>

@@ -26,13 +26,18 @@ class MemberListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_list)
-
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true);
         mMembers = intent.getParcelableArrayListExtra(MEMBER_LIST)
         mAdapter = MemberListAdapter(this, mMembers, R.layout.member_item)
 
         memberRecyclerView!!.layoutManager = LinearLayoutManager(this)
         memberRecyclerView!!.adapter = mAdapter
-}
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu_member; this adds items to the action bar if it is present.
