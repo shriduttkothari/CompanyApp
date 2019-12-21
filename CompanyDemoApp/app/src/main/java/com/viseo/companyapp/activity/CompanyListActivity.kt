@@ -53,7 +53,7 @@ class CompanyListActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<List<Company>>, response: Response<List<Company>>) {
 
-                Log.d(TAG, "Total Companies found: " + response!!.body()!!.size)
+                Log.d(TAG, "Total Companies found: " + response.body()!!.size)
                 val companyList = response.body()
                 if (companyList != null) {
                     mCompanies.addAll(companyList)

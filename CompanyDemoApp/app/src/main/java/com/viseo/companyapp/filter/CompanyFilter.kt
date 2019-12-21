@@ -20,6 +20,7 @@ class CompanyFilter: Filter {
     }
 
     override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+        @Suppress("UNCHECKED_CAST")
         adapter.updateDataSet(results!!.values as ArrayList<Company>)
     }
 
@@ -27,10 +28,10 @@ class CompanyFilter: Filter {
         var results: FilterResults = FilterResults()
 
         if(constraint!!.isNotEmpty()) {
-            var upperCaseConstraint = constraint.toString()!!.toUpperCase();
+            var upperCaseConstraint = constraint.toString().toUpperCase();
             var filteredCompany: ArrayList<Company> = ArrayList()
             filterList.forEach {
-                if(it.companyName!!.toUpperCase()!!.contains(upperCaseConstraint)) {
+                if(it.companyName!!.toUpperCase().contains(upperCaseConstraint)) {
                     filteredCompany.add(it)
                 }
             }
