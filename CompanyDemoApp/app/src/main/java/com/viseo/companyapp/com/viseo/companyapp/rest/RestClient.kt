@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 object RestClient {
 
-    private val BASE_URL = "https://next.json-generator.com/api/json/get/Vk-LhK44U"
+    private val BASE_URL = "https://next.json-generator.com"
     private var mRetrofit: Retrofit? = null
 
     val client: Retrofit
