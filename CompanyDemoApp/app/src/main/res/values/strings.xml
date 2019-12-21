@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CompanyDemoApp</string>
+    <string name="search">Search</string>
+    <string name="sort">Sort</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="sort_by">Sort By</string>
 </resources>
