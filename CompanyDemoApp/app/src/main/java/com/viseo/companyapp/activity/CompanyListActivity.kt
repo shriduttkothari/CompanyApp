@@ -1,7 +1,8 @@
-package com.viseo.companyapp
+package com.viseo.companyapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.viseo.companyapp.R
 
 class CompanyListActivity : AppCompatActivity() {
 

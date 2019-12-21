@@ -1,6 +1,6 @@
-package com.viseo.companyapp.com.viseo.companyapp.rest
+package com.viseo.companyapp.rest
 
-import com.viseo.companyapp.com.viseo.companyapp.model.CompanyList
+import com.viseo.companyapp.model.CompanyList
 import retrofit2.Call
 import retrofit2.http.GET
 

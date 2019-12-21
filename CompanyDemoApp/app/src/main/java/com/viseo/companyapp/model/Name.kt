@@ -1,4 +1,4 @@
-package com.viseo.companyapp.com.viseo.companyapp.model
+package com.viseo.companyapp.model
 /**
  *
  * @author Shridutt.Kothari
