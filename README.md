@@ -15,12 +15,9 @@ A club contains Companies and each company has members attached to it.  This app
 
 # App Screenshots
 
-![Company List](https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_1.png)
-![Search in Company List](https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_2.png)
-![Sorting in Company List](https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_3.png)
-![Member List](https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_4.png)
-![Sorting in Member List](https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_5.png)
+<img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_1.png" width="18%"></img> <img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_2.png" width="18%"></img> <img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_3.png" width="18%"></img> <img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_4.png" width="18%"></img> <img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_5.png" width="18%"></img> 
 
+# Contact Me
 Feel free to drop me an email @ shriduttkothari@gmail.com if you have any questions, suggestions about this app.
 
 Thanks!!
