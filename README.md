@@ -14,8 +14,13 @@ A club contains Companies and each company has members attached to it.  This app
 - run build_release.bat file from CompanyDemoApp directory
 
 # App Screenshots
-
 <img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_1.png" width="18%"></img> <img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_2.png" width="18%"></img> <img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_3.png" width="18%"></img> <img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_4.png" width="18%"></img> <img src="https://github.com/shriduttkothari/CompanyApp/blob/master/data/Screenshots/Screenshot_5.png" width="18%"></img> 
+
+# License
+## Apache 2.0 License
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)  
+
+This project is licensed under the MIT License - see the LICENSE file for details
 
 # Contact Me
 Feel free to drop me an email @ shriduttkothari@gmail.com if you have any questions, suggestions about this app.
