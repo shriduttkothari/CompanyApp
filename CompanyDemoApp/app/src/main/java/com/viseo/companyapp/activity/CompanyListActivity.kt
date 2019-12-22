@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.ProgressBar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,11 +35,11 @@ class CompanyListActivity : AppCompatActivity() {
     private var mApiService: APIService? = null
     private var mAdapter: CompanyListAdapter?= null;
     private var mCompanies: MutableList<Company> = ArrayList()
-    private var snackbar: Snackbar? = null
+    private var loadProgress: ProgressBar? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_company_list)
-
+        loadProgress = findViewById(R.id.progressBar)
         mApiService = RestClient.client.create(APIService::class.java)
         companyRecyclerView!!.layoutManager = LinearLayoutManager(this)
 
@@ -48,36 +49,41 @@ class CompanyListActivity : AppCompatActivity() {
         fetchCompanyList()
     }
 
+    /**
+     * Fetches company data from server
+     */
     private fun fetchCompanyList() {
+        loadProgress!!.setVisibility(View.VISIBLE);
         val call = mApiService!!.fetchCompanyList();
         call.enqueue(object : Callback<List<Company>> {
 
             override fun onResponse(call: Call<List<Company>>, response: Response<List<Company>>) {
-
-                Log.d(TAG, "Total Companies found: " + response.body()!!.size)
+                Log.d(TAG, "Total Companies: " + response.body()!!.size)
                 val companyList = response.body()
                 if (companyList != null) {
                     mCompanies.addAll(companyList)
                     mAdapter!!.updateDataSet(mCompanies)
                 }
+                loadProgress!!.setVisibility(View.GONE);
             }
 
             override fun onFailure(call: Call<List<Company>>, t: Throwable) {
                 Log.e(TAG, "Got error : " + t.localizedMessage)
+                loadProgress!!.setVisibility(View.GONE);
                 showSnackBar(getString(R.string.unable_to_fetch_data), companyRelativeLayout)
             }
         })
     }
 
     fun showSnackBar(text: String, parentLayout: View) {
-        val snackbar = Snackbar
+        val snackBar = Snackbar
             .make(parentLayout, text, Snackbar.LENGTH_INDEFINITE)
             .setAction(getString(R.string.retry), object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     fetchCompanyList()
                 }
             })
-        snackbar.show()
+        snackBar.show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
