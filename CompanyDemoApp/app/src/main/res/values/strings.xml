@@ -8,4 +8,6 @@
     <string name="age">&#160;(Age)</string>
     <string name="sort_by">Sort By</string>
     <string name="years">&#160;yrs</string>
+    <string name="retry">Retry</string>
+    <string name="unable_to_fetch_data">Unable to fetch data from server.</string>
 </resources>

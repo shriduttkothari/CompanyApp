@@ -1,27 +1,28 @@
 package com.viseo.companyapp.activity
 
 import android.content.DialogInterface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-
+import com.google.android.material.snackbar.Snackbar
 import com.viseo.companyapp.R
 import com.viseo.companyapp.adapter.CompanyListAdapter
 import com.viseo.companyapp.model.Company
 import com.viseo.companyapp.rest.APIService
 import com.viseo.companyapp.rest.RestClient
 import kotlinx.android.synthetic.main.activity_company_list.*
-
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
+
 
 /**
  * Company List Activity
@@ -33,7 +34,7 @@ class CompanyListActivity : AppCompatActivity() {
     private var mApiService: APIService? = null
     private var mAdapter: CompanyListAdapter?= null;
     private var mCompanies: MutableList<Company> = ArrayList()
-
+    private var snackbar: Snackbar? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_company_list)
@@ -63,15 +64,27 @@ class CompanyListActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<List<Company>>, t: Throwable) {
                 Log.e(TAG, "Got error : " + t.localizedMessage)
+                showSnackBar(getString(R.string.unable_to_fetch_data), companyRelativeLayout)
             }
         })
+    }
+
+    fun showSnackBar(text: String, parentLayout: View) {
+        val snackbar = Snackbar
+            .make(parentLayout, text, Snackbar.LENGTH_INDEFINITE)
+            .setAction(getString(R.string.retry), object : View.OnClickListener {
+                override fun onClick(v: View?) {
+                    fetchCompanyList()
+                }
+            })
+        snackbar.show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu_company; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_company, menu)
-        var seartchMenuItem = menu.findItem(R.id.action_search)
-        val searchView = seartchMenuItem!!.getActionView() as androidx.appcompat.widget.SearchView
+        var searchMenuItem = menu.findItem(R.id.action_search)
+        val searchView = searchMenuItem!!.getActionView() as androidx.appcompat.widget.SearchView
         searchView.setOnQueryTextListener(object :  androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 //Will be called when user types something
