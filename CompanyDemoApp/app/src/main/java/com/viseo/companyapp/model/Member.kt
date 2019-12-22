@@ -8,7 +8,6 @@ import kotlinx.android.parcel.Parcelize
  *
  * @author Shridutt.Kothari
  */
-//@Parcelize
 class Member() : Parcelable {
 
     var age: Int? = null

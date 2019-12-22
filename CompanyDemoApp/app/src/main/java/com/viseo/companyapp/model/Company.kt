@@ -12,6 +12,9 @@ class Company {
 
     @SerializedName("company")
     val companyName: String? = null
+    val website: String? = null
+    val about: String? = null
+    val logo: String? = null
     val members: ArrayList<Member>? = null
 
     companion object {

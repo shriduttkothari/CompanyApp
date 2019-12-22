@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.member_item.view.*
  */
 class MemberListAdapter : RecyclerView.Adapter<MemberListAdapter.MemberViewHolder> {
 
-    private val context: Context
+    private val mContext: Context
     private var mMemberList: List<Member>
     private val mRowLayout: Int
 
@@ -25,7 +25,7 @@ class MemberListAdapter : RecyclerView.Adapter<MemberListAdapter.MemberViewHolde
     }
 
     constructor(context: Context, memberList: List<Member>, rowLayout: Int): super() {
-        this.context = context
+        this.mContext = context
         this.mMemberList = memberList
         this.mRowLayout = rowLayout
     }
@@ -37,6 +37,8 @@ class MemberListAdapter : RecyclerView.Adapter<MemberListAdapter.MemberViewHolde
     override fun onBindViewHolder(holder: MemberViewHolder, position: Int) {
         holder.memberName?.text =  mMemberList[position].name!!.first!!.toString() + " "+ mMemberList[position].name!!.last!!.toString()
         holder.memberAge?.text =  mMemberList[position].age!!.toString()
+        holder.memberEmail?.text =  mMemberList[position].email!!.toString()
+        holder.memberPhone?.text =  mMemberList[position].phone!!.toString()
         holder.containerView.setOnClickListener {
             //TODO: we can create an activity to show member details and launch it from here
         }
@@ -49,5 +51,7 @@ class MemberListAdapter : RecyclerView.Adapter<MemberListAdapter.MemberViewHolde
     class MemberViewHolder(val containerView: View) : RecyclerView.ViewHolder(containerView) {
         val memberName = containerView.memberName;
         val memberAge = containerView.memberAge;
+        val memberEmail = containerView.memberEmail;
+        val memberPhone = containerView.memberPhone;
     }
 }

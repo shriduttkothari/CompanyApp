@@ -27,6 +27,7 @@ class MemberListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_list)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true);
+        setTitle(intent.getStringExtra(COMPANY_NAME));
         mMembers = intent.getParcelableArrayListExtra(MEMBER_LIST)
         mAdapter = MemberListAdapter(this, mMembers, R.layout.member_item)
 
@@ -90,6 +91,7 @@ class MemberListActivity : AppCompatActivity() {
 
     companion object {
         private val TAG = MemberListActivity::class.java.simpleName
-        public const val MEMBER_LIST = "memberList"
+        const val MEMBER_LIST = "memberList"
+        const val COMPANY_NAME: String = "companyName"
     }
 }

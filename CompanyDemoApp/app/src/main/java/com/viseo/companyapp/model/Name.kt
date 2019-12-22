@@ -8,7 +8,6 @@ import kotlinx.android.parcel.Parcelize
  *
  * @author Shridutt.Kothari
  */
-//@Parcelize
 class Name() : Parcelable {
     var first: String? = null
     var last: String? = null

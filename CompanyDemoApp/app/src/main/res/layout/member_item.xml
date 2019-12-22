@@ -30,7 +30,26 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:layout_below="@id/memberName"
+            android:layout_marginTop="@dimen/margin_small"
             android:textStyle="normal" />
+        <TextView
+            android:id="@+id/memberEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/memberAge"
+            android:layout_marginTop="@dimen/margin_small"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/memberPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/memberEmail"
+            android:layout_marginTop="@dimen/margin_small"
+            android:textStyle="normal" />
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
 
