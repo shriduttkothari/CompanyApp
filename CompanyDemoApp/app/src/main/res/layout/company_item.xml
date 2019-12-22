@@ -14,28 +14,47 @@
         android:layout_height="match_parent"
         android:layout_margin="@dimen/cardview_child_layout_margin">
 
-        <TextView
-            android:id="@+id/companyName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/text_size"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/companyWebsite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:layout_below="@id/companyName"
-            android:layout_marginTop="@dimen/margin_small"
-            android:textStyle="normal" />
+        <RelativeLayout
+            android:id="@+id/companyHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/companyIcon"
+                android:layout_height="@dimen/company_icon_size"
+                android:layout_alignParentLeft="true"
+                android:layout_width="@dimen/company_icon_size" />
+
+            <TextView
+                android:id="@+id/companyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size"
+                android:layout_marginLeft="@dimen/margin_horizontal_company_header"
+                android:layout_toRightOf="@id/companyIcon"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/companyWebsite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@id/companyName"
+                android:layout_marginLeft="@dimen/margin_horizontal_company_header"
+                android:layout_toRightOf="@id/companyIcon"
+                android:layout_marginTop="@dimen/margin_small"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/companyAbout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:layout_marginTop="@dimen/margin_small"
-            android:layout_below="@id/companyWebsite"
+            android:layout_below="@id/companyHeader"
             android:textStyle="normal" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

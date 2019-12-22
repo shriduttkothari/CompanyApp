@@ -8,7 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
+import com.viseo.companyapp.R
 import com.viseo.companyapp.activity.MemberListActivity
 import com.viseo.companyapp.filter.CompanyFilter
 import com.viseo.companyapp.model.Company
@@ -47,7 +51,8 @@ class CompanyListAdapter : RecyclerView.Adapter<CompanyListAdapter.CompanyViewHo
         holder.companyName?.text =  mCompanyList[position].companyName;
         holder.companyWebsite?.text =  mCompanyList[position].website;
         holder.companyAbout?.text =  mCompanyList[position].about;
-
+        var imageUrl = mCompanyList[position].logo
+        holder.updateWithUrl(imageUrl!!)
         holder.containerView.setOnClickListener {
             var members = mCompanyList[position].members
             val intent: Intent = Intent(mContext, MemberListActivity::class.java)
@@ -62,9 +67,16 @@ class CompanyListAdapter : RecyclerView.Adapter<CompanyListAdapter.CompanyViewHo
     }
 
     class CompanyViewHolder(val containerView: View) : RecyclerView.ViewHolder(containerView) {
-       val companyName = containerView.companyName;
-        val companyWebsite = containerView.companyWebsite;
-        val companyAbout = containerView.companyAbout;
+        val companyName: TextView = containerView.companyName;
+        val companyWebsite: TextView = containerView.companyWebsite;
+        val companyAbout: TextView = containerView.companyAbout;
+        private val companyIcon: ImageView = containerView.companyIcon
+
+        fun updateWithUrl(url: String) {
+            Picasso.get()
+                .load(url!!.replace("http://", "https://"))
+                .into(companyIcon)
+        }
     }
 
     override fun getFilter(): Filter {

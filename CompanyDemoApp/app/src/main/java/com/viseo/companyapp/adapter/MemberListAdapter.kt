@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.viseo.companyapp.R
 import com.viseo.companyapp.model.Member
 import kotlinx.android.synthetic.main.member_item.view.*
 
@@ -36,7 +37,7 @@ class MemberListAdapter : RecyclerView.Adapter<MemberListAdapter.MemberViewHolde
 
     override fun onBindViewHolder(holder: MemberViewHolder, position: Int) {
         holder.memberName?.text =  mMemberList[position].name!!.first!!.toString() + " "+ mMemberList[position].name!!.last!!.toString()
-        holder.memberAge?.text =  mMemberList[position].age!!.toString()
+        holder.memberAge?.text =  mMemberList[position].age!!.toString() + mContext.getString(R.string.years)
         holder.memberEmail?.text =  mMemberList[position].email!!.toString()
         holder.memberPhone?.text =  mMemberList[position].phone!!.toString()
         holder.containerView.setOnClickListener {
