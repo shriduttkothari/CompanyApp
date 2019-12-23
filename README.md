@@ -20,7 +20,7 @@ A club contains Companies and each company has members attached to it.  This app
 ## Apache 2.0 License
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)  
 
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the Apache 2.0 License - see the LICENSE file for details
 
 # Contact Me
 Feel free to drop me an email @ shriduttkothari@gmail.com if you have any questions, suggestions about this app.
